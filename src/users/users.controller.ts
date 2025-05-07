@@ -21,7 +21,7 @@ export class UsersController {
     const existingUser = await this.usersService.findByEmail(user.username);
     if (existingUser) {
       throw new HttpException(
-        'El email ya está registrado',
+        'El username ya está registrado',
         HttpStatus.BAD_REQUEST,
       );
     }
