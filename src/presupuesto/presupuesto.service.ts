@@ -11,6 +11,7 @@ export class PresupuestoService {
     private readonly presupuestoModel: Model<PresupuestoDocument>,
 
     @InjectModel(Transaction.name)
+    private readonly transactionModel: Model<Transaction>,
   ) {}
 
   async crear( montoInicial: number): Promise<Presupuesto> {

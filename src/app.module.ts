@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { CategoriesModule } from './categories/categories.module';
+import { PresupuestoModule } from './presupuesto/presupuesto.module'; // Asegúrate de que la ruta sea correcta
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { CategoriesModule } from './categories/categories.module';
     }),
     UsersModule,
     CategoriesModule,
+    PresupuestoModule,
   ],
   controllers: [AppController],
   providers: [AppService],

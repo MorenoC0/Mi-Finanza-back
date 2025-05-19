@@ -20,7 +20,7 @@ export class TransactionsService {
       throw new NotFoundException('Categoría no encontrada');
     }
 
-    await this.presupuestoService.actualizarMonto(transaction.id: string, cantidad: number);
+    //await this.presupuestoService.actualizarMonto(transaction.id: string, cantidad: number);
 
     const newTransaction = new this.transactionModel(transaction);
     return newTransaction.save();
