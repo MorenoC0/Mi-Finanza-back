@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { CategoriesModule } from './categories/categories.module';
 import { PresupuestoModule } from './presupuesto/presupuesto.module'; // Asegúrate de que la ruta sea correcta
+import { AuthModule } from './auth/auth.module'; // Asegúrate de que la ruta sea correcta
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { PresupuestoModule } from './presupuesto/presupuesto.module'; // Asegúr
     UsersModule,
     CategoriesModule,
     PresupuestoModule,
+    AuthModule, // Asegúrate de que la ruta sea correcta
   ],
   controllers: [AppController],
   providers: [AppService],

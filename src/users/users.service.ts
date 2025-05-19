@@ -22,7 +22,12 @@ export class UsersService {
     return newUser.save();
   }
 
-  async findByEmail(username: string) {
-    return this.userModel.findOne({ username }).exec();
+  async findByUsername(username: string) {
+    return this.userModel.findOne({ username }).select("+password").exec();
   }
+
+  async findAll(): Promise<User[]> {
+    return this.userModel.find().exec();
+  }
+
 }

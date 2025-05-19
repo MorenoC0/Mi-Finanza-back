@@ -5,6 +5,7 @@ import {
   Body,
   HttpException,
   HttpStatus,
+  Get
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User } from './users.schema';
@@ -18,7 +19,7 @@ export class UsersController {
     @Body() user: User,
   ): Promise<{ message: string; user: Omit<User, 'password'> }> {
     // Verificar si el email ya existe
-    const existingUser = await this.usersService.findByEmail(user.username);
+    const existingUser = await this.usersService.findByUsername(user.username);
     if (existingUser) {
       throw new HttpException(
         'El username ya está registrado',
@@ -37,4 +38,15 @@ export class UsersController {
       user: userWithoutPassword,
     };
   }
+
+  @Get('all')
+  async getAllUsers(): Promise<User[]> {
+    const users = await this.usersService.findAll();
+    return users.map(user => {
+      const { password, ...userWithoutPassword } = user.toObject();
+      return userWithoutPassword;
+    });
+  
+  }
+  
 }
