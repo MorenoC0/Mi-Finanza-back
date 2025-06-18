@@ -11,6 +11,9 @@ export class AuthController {
     if (!token) {
       throw new UnauthorizedException('Credenciales inválidas');
     }
-    return { access_token: token };
+    return {
+      access_token: token.access_token,
+      user: token.user,
+    };
   }
 }
