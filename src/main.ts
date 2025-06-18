@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: "https://mi-finanza-back.onrender.com/",  // Acepta solo el front local
+    origin: "https://jade-cendol-7c3b5b.netlify.app/",  // Acepta solo el front local
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     credentials: true,
   });
