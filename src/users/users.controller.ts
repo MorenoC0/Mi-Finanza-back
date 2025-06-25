@@ -5,7 +5,7 @@ import {
   Body,
   HttpException,
   HttpStatus,
-  Get
+  Get,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User } from './users.schema';

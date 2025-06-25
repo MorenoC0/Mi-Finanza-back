@@ -9,9 +9,6 @@ export class Category extends Document {
 
   @Prop({ required: true, enum: ['income', 'expense'] })
   type: string;
-
-  @Prop({ ref: 'User', required: true })
-  userId: string; // Relación con el usuario dueño de la categoría
 }
 
 export const CategorySchema = SchemaFactory.createForClass(Category);

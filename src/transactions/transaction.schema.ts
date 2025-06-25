@@ -16,6 +16,9 @@ export class Transaction extends Document {
   @Prop({ required: true })
   date: Date;
 
+  @Prop({ required: true, enum: ['ingreso', 'gasto'] })
+  type: 'ingreso' | 'gasto';
+
   @Prop({ trim: true })
   description: string;
 }

@@ -20,9 +20,11 @@ export class TransactionsService {
       throw new NotFoundException('Categoría no encontrada');
     }
 
-    //await this.presupuestoService.actualizarMonto(transaction.id: string, cantidad: number);
-
     const newTransaction = new this.transactionModel(transaction);
     return newTransaction.save();
+  }
+
+  async findAllByUser(userId: string): Promise<Transaction[]> {
+    return this.transactionModel.find({ userId }).sort({ date: -1 }).exec();
   }
 }

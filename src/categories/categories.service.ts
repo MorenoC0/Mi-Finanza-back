@@ -12,6 +12,7 @@ export class CategoriesService {
 
   async create(category: Category): Promise<Category> {
     const newCategory = new this.categoryModel(category);
+    console.log('Creating category:', newCategory);
     return newCategory.save();
   }
 
